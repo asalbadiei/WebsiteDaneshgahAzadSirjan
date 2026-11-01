@@ -5,6 +5,11 @@ const im = (name: string, fa: string, en: string): ImageRef => ({ src: `/illustr
 
 export type HeroSlide = {
   id: string;
+  /**
+   * The image is finished artwork with its own text (a designed banner): it is shown as-is,
+   * without the tint, the overlaid title or a link. Its alt text must repeat the text it contains.
+   */
+  artwork?: boolean;
   eyebrow: L;
   title: L;
   body: L;
@@ -15,13 +20,19 @@ export type HeroSlide = {
 
 export const heroSlides: HeroSlide[] = [
   {
-    id: 'welcome',
-    eyebrow: l('با مجموعه‌ای از بهترین و مجرب‌ترین استادان', 'Home to experienced, dedicated faculty'),
-    title: l('دانشگاه آزاد اسلامی سیرجان', 'Islamic Azad University, Sirjan'),
-    body: l('با دانشکده‌ها، رشته‌های تحصیلی و خدمات دانشگاه در یک درگاه یکپارچه آشنا شوید.', 'Explore the university’s faculties, programmes and services in one place.'),
-    image: im('campus', 'تصویر نمادین پردیس دانشگاه', 'Illustration of the university campus'),
+    id: 'banner',
+    artwork: true,
+    eyebrow: l('آموزش، پژوهش و فناوری؛ مسیری برای ساختن آینده', 'Education, research and technology: a path to building the future'),
+    title: l('دانشگاه آزاد اسلامی واحد سیرجان', 'Islamic Azad University, Sirjan Branch'),
+    body: l('', ''),
+    image: {
+      src: '/images/hero-banner.jpg',
+      alt: l(
+        'بنر دانشگاه آزاد اسلامی واحد سیرجان بر روی عکس سردر پردیس: «آموزش، پژوهش و فناوری؛ مسیری برای ساختن آینده» — آموزش، پژوهش، فناوری — سیرجان، استان کرمان',
+        'Islamic Azad University, Sirjan Branch banner over a photo of the campus gateway: “Education, research and technology: a path to building the future” — Education, Research, Technology — Sirjan, Kerman Province',
+      ),
+    },
     primary: { label: l('درباره دانشگاه', 'About the university'), href: '/about' },
-    secondary: { label: l('دانشکده‌ها', 'Faculties'), href: '/faculties' },
   },
   {
     id: 'admissions',

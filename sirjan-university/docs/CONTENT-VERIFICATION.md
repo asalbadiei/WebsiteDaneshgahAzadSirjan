@@ -38,7 +38,7 @@ by itself.
 | News, events, announcements | `src/content/news.ts`, `src/content/announcements.ts` | **Sample** items |
 | Forms and regulations files | `src/content/documents.ts` (`href`) | Titles only; downloads disabled ("File not yet uploaded") |
 | Publications files | `src/content/publications.ts` (`href`) | **Sample**; read action disabled |
-| Photography and video | `public/illustrations/*`, `src/content/media.ts` | Generated illustrative artwork, labelled on every image; videos not published |
+| Photography and video | `public/images/hero-banner.jpg`, `public/illustrations/*`, `src/content/media.ts` | First hero slide uses the banner supplied by the site owner; elsewhere generated illustrative artwork, labelled on every image; videos not published |
 | University system URLs | `src/content/links.ts` | Only well-known addresses linked (see below); others unlinked |
 
 ## Structural questions to resolve
